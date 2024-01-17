@@ -1,4 +1,3 @@
-# reference https://luniverse.io/cryptography-101-rsa-algorithm/?lang=ko
 import Cryptodome.Util.number as number
 
 e = 3
