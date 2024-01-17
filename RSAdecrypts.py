@@ -1,7 +1,7 @@
 #fist install with pip install pycryptodome and pip install pycryptodomex
-#RSA relies on the mathematical relationship d ≡ e^-1 (mod ϕ(n))
+#RSA relies on the mathematical relationship d ≡ e^(-1) (mod ϕ(n))
 #The RSA decryption formula is M≡c^d(mod n) where M is a plain text and C is ciphertext and n = mod(p×q)
-# And d =(p-1) (q-1)
+
 import Cryptodome.Util.number as number
 
 e = 3
@@ -14,7 +14,9 @@ q = 590872612825179551336102196593
 
 # calculate phi(n) and d
 # The totient function ϕ(n) =(p−1)×(q−1)
+#The variable e represents the public exponent in the RSA algorithm. In RSA, the public key consists of two components: the modulus (n) and the public exponent (e). The public exponent is typically a small prime number, often chosen as 3 or 65537, as it simplifies certain operations and is secure for practical purposes.
 phi = (q-1)*(p-1)
+#d ≡ e^-1 (mod ϕ(n))
 d = number.inverse(e, phi)
 
 # plaintext: M = Cᵈ (mod n)
