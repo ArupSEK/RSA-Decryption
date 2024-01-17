@@ -1,3 +1,6 @@
+#fist install with pip install pycryptodome and pip install pycryptodomex
+#RSA relies on the mathematical relationship d ≡ e^-1 (mod ϕ(n))
+#The RSA decryption formula is M≡c^d(mod n) where M is a plain text and C is ciphertext and n = mod(p×q)
 import Cryptodome.Util.number as number
 
 e = 3
@@ -9,6 +12,7 @@ p = 416064700201658306196320137931
 q = 590872612825179551336102196593
 
 # calculate phi(n) and d
+# The totient function ϕ(n) =(p−1)×(q−1)
 phi = (q-1)*(p-1)
 d = number.inverse(e, phi)
 
